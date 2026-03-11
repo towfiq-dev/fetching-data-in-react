@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Single from './Single'
 
 const AllData = () => {
   const [allUser, setAllUser] = useState([])
@@ -11,6 +12,14 @@ const AllData = () => {
   return (
     <div>
     <h1>Data:{allUser.length}</h1>
+    {
+      allUser.map(data=> (
+        <Single 
+        key={data.id}
+        data = {data}
+        ></Single>
+      ))
+    }
     </div>
   )
 }
